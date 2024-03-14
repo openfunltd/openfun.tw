@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P99SGF4QQD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-        gtag('config', 'G-P99SGF4QQD');
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OpenFun</title>
@@ -25,7 +16,7 @@
   <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pragati+Narrow&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
   <!-- css -->
   <link rel="stylesheet" href="css/common.css">
   <script src="/js/vue.global.js"></script>
@@ -109,31 +100,123 @@
             class="menu"
             :class="{ active: rwdMenuVisible }"
           >
-            <a href="#about" @click="rwdMenuVisible = false">ABOUT US</a>
-            <a href="#works" @click="rwdMenuVisible = false">WORKS</a>
-            <a href="#members" @click="rwdMenuVisible = false">MEMBERS</a>
+            <a href="#about" @click="rwdMenuVisible = false">關於我們</a>
+            <a href="#works" @click="rwdMenuVisible = false">案例介紹</a>
+            <a href="#members" @click="rwdMenuVisible = false">歐噴成員</a>
           </div>
         </div>
       </div>
     </section>
 
     <div class="main">
-      <section class="top" id="top">
+      <section class="top" id="top" hidden>
+        <div class="content">
+          <h1>
+            歐噴 OpenFun
+          </h1>
+          <div>
+            秉承著「數據引領未來」的信念，不斷創新，致力於成為您在大數據領域中的可靠合作夥伴。<br>
+            我們期待與您攜手共創更美好的未來，持續以數據的力量促進發展。
+          </div>
+        </div>
+        <div ref="zipperWrapper" class="zipper">
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <!-- 拉鍊的左邊布 -->
+            <path
+              fill="#fc0"
+              :d="`${leftTrackPath}L-10000,${zipperTrackMaxY},-10000,0`"
+            />
+
+            <!-- 拉鍊的右邊布 -->
+            <path
+              fill="#fc0"
+              :d="`${rightTrackPath}L10000,${zipperTrackMaxY},10000,0`"
+            />
+
+            <!-- 拉鍊的左邊軌道線 -->
+            <path
+              fill="none"
+              class="zipper-track-line"
+              ref="leftTrack"
+              :d="leftTrackPath"
+            />
+
+            <!-- 拉鍊的右邊軌道線 -->
+            <path
+              fill="none"
+              class="zipper-track-line"
+              ref="rightTrack"
+              :d="rightTrackPath"
+            />
+
+            <!-- 左邊拉鍊軌道 -->
+            <path
+              v-for="item in leftTrackItems"
+              fill="#CC902F"
+              d="M28,7.2c-1.7,0-3.3,1-4.2,2.5h-0.1c-2.5,0-4.6-1.7-5.3-4c-0.2-0.9-1-1.5-1.9-1.5H6.2c-1.1,0-2,0.9-2,2v13.1 c0,1.1,0.9,2,2,2h10.3c0.9,0,1.7-0.6,1.9-1.5c0.7-2.3,2.8-4,5.3-4h0.1c0.9,1.5,2.4,2.5,4.2,2.5c2.8,0,5-2.5,5-5.5 C33,9.6,30.8,7.2,28,7.2z"
+              :transform="`translate(${item.x}, ${item.y}) rotate(${item.r + 180})`"
+            />
+
+            <!-- 右邊拉鍊軌道 -->
+            <path
+              v-for="item in rightTrackItems"
+              fill="#CC902F"
+              d="M28,7.2c-1.7,0-3.3,1-4.2,2.5h-0.1c-2.5,0-4.6-1.7-5.3-4c-0.2-0.9-1-1.5-1.9-1.5H6.2c-1.1,0-2,0.9-2,2v13.1 c0,1.1,0.9,2,2,2h10.3c0.9,0,1.7-0.6,1.9-1.5c0.7-2.3,2.8-4,5.3-4h0.1c0.9,1.5,2.4,2.5,4.2,2.5c2.8,0,5-2.5,5-5.5 C33,9.6,30.8,7.2,28,7.2z"
+              :transform="`translate(${item.x}, ${item.y}) rotate(${item.r})`"
+            />
+
+            <!-- 拉鍊頭 -->
+            <g
+              :transform="`translate(${zipperHeadX - 36}, ${zipperHeadY - 50})`"
+              @mousedown="mousedown"
+            >
+              <path class="zipper-head" d="M36.2,2c2,0,3.9,0.3,5.8,0.9l16.6,5.3c5.1,1.6,9.1,5.5,10.8,10.6c1.8,5,1.1,10.6-1.9,15l-2,2.9 C62,42,59.6,47.9,58.5,54.2l-1.3,7.4c-0.5,2.8-2.8,4.7-5.7,4.7H20.9c-2.8,0-5.2-2-5.7-4.7l-1.3-7.4c-1.1-6.3-3.5-12.2-7.1-17.5 l-2-2.9c-3-4.5-3.7-9.9-1.9-15c1.8-5,5.7-9,10.8-10.6l16.6-5.3C32.3,2.4,34.2,2,36.2,2z"/>
+
+              <g
+                transform-origin="37 47"
+                :transform="`rotate(${zipperHeadRot})`"
+                :class="{ 'zipper-head-ani': !near }"
+              >
+                <path class="zipper-head" d="M62.9,114.5l-12-71.9c-1.2-7.2-7.4-12.5-14.7-12.5s-13.5,5.2-14.7,12.5l-12,71.9c-1.3,7.9,0.9,15.9,6,22 c5.2,6.1,12.7,9.6,20.7,9.6c8,0,15.5-3.5,20.7-9.6C62,130.4,64.2,122.4,62.9,114.5z M36,135c-8.8,0-16-7.2-16-16s7.2-16,16-16 s16,7.2,16,16S44.8,135,36,135z"/>
+                <circle fill="#0000" cx="36" cy="119" r="15.5"/>
+              </g>
+
+              <path class="zipper-head" d="M36.2,56c-2.9,0-5.4-2.4-5.4-5.4v-30c0-2.9,2.4-5.4,5.4-5.4c2.9,0,5.4,2.4,5.4,5.4v30 C41.6,53.6,39.2,56,36.2,56z"/>
+            </g>
+
+            <circle
+              v-if="debug"
+              :cx="0"
+              cy="0"
+              r="4"
+              fill="#ff0000"
+              :transform="`translate(${zipperHeadX}, ${zipperHeadY})`"
+            />
+
+            <path
+              v-if="debug"
+              :stroke="near ? '#f00' : '#0f0'"
+              :d="`M${zipperHeadX},${zipperHeadY}L${mouseX},${mouseY}`"
+            />
+          </svg>
+        </div>
+      </section>
+
+      <section class="top2" id="top2">
         <div class="container">
           <div class="top-main">
             <div class="content">
               <h1>
-                不只是達標<br>
-                還要做到更好
+                開放數據引領未來！
               </h1>
               <div class="desc">
-                完成與客戶之間合約的規格只是基本，我們並不滿足於此，我們希望能為客戶再多做一些，科技日新月異，而需求也可以在隨著產品逐漸成形而有改變，我們的目標是希望在時間成本範圍內，帶給客戶最好的服務！
+                秉承著「開放數據引領未來」的信念，不斷創新，致力於成為您在大數據領域中的可靠合作夥伴。我們期待與您攜手共創更美好的未來，持續以數據的力量促進發展。
               </div>
               <div class="action">
-                <a href="#works" class="btn btn--white btn--outline">
+                <a href="#works" class="btn btn--orange btn--outline">
                   案例介紹
                 </a>
-                <a href="mailto:contact@openfun.tw" class="btn">
+                <a href="mailto:contact@openfun.tw" class="btn btn--orange">
                   聯絡我們
                 </a>
               </div>
@@ -148,9 +231,11 @@
           <h2>ABOUT US</h2>
           <div class="content">
             <div class="intro">
-              <p>歐噴這名字，取自於 Open 這個單字，公司創辦人 Ronny 過去參與許多開放政府（Open Goverement）運動，長期推動開放資料（Open Data），並且使用及貢獻開放原始碼（Open Source）。創立歐噴公司，希望能將開放文化變成一家公司，召集有志一同的夥伴取之於開放，用之於開放，一起能在台灣推動開放文化。</p>
-              <p>英文名稱 OpenFun ，取自於「開放」兩字拆解後會變成「開」+「放」，就是 Open + Fun。我們相信實踐開放文化的過程是有趣的，開放原始碼讓世界上每個人都可以把心中的想法和對新技術的實作轉化為程式碼供別人使用，讓我們可以隨時都可以觸碰到最新技術，並將技術變成應用，我們也可以將我們的成果分享給別人，這樣的過程能不有趣嗎？</p>
-              <p>創辦人 Ronny 參與 g0v 零時政府十幾年，並發起了「台灣公司資料」、「公司關係圖」、「開放政府標案」、「開放政治獻金」、「求職小幫手」、「新聞小幫手」、「鄉民看電視」、「國會觀察家」...等專案，十幾年來探索資料爬蟲、開放資料、地理資料處理、搜尋引擎、資料視覺化、群眾外包、瀏覽器套件、影音處理、語音轉逐字稿、大型語言模型文字摘要等技術，這些專案其中許多也不只是黑客松期間的展示型專案，而是已經運作超過十年並且到現在仍在持續更新資料並提供服務，成立歐噴公司也是希望能將這些技術，為客戶帶來可以長久穩定運作的系統。</p>
+              <p>歐噴 OpenFun，作為一家引領大數據分析浪潮的專業公司，致力於協助各類組織有效搜集、分析和應用龐大的數據資料。我們的使命在於為企業、非政府組織以及非營利機構提供全方位的大數據解決方案，幫助客戶從數據中挖掘價值，實現更具競爭力的發展。</p>
+              <p>在歐噴 OpenFun，我們擁有一支優秀且充滿激情的團隊，專業的數據科學家、工程師和分析師匯聚於此，致力於提供高效、創新的大數據服務。我們以先進的技術和尖端的分析工具為後盾，不僅協助客戶在海量數據中快速準確地定位目標信息，還能提供深入洞察，助力制定更具前瞻性的商業策略。</p>
+              <p>對於企業而言，歐噴 OpenFun的大數據解決方案不僅可以有效降低成本，優化業務流程，還能協助企業預測市場趨勢，提高決策的準確性。對於非政府組織和非營利組織而言，我們的服務更是具有社會影響力，可應用於政府立法、檢視政府政策效益，以促進社會公益事業的可持續發展。</p>
+              我們的客戶覆蓋範圍廣泛，包括不同規模的企業、國際性非政府組織以及本土的非營利機構。透過與客戶深度合作，我們建立了長期穩固的夥伴關係，共同攜手應對當今複雜多變的市場環境。</p>
+              <p>歐噴 OpenFun秉承著"數據引領未來"的信念，不斷創新、進取，致力於成為您在大數據領域中的可靠合作夥伴。我們期待與您攜手共創更美好的未來，以數據的力量引領企業和社會的可持續發展。</p>
             </div>
             <div class="flow">
               <img src="/images/about.svg" loading="lazy">
@@ -170,24 +255,25 @@
             </div>
             <div class="content">
               <div class="title">
-                台灣公司資料
+                Retail Vision 市場預測優化
               </div>
               <div class="tags">
                 <span class="tag tag--red">
-                  COMPANY
+                  MARKETING
                 </span>
                 <span class="tag tag--orange">
-                  g0v
+                  TRENDS
                 </span>
               </div>
               <div class="desc">
-                <p>2013年1月開始寫爬蟲，耗費三個月時間抓取完 200 萬家公司資料，之後建立起每日自動更新機制，持續更新至今，為台灣最完整公開公司資料，並且有使用 API 供人使用，衍生出像<a href="https://company-graph.g0v.ronny.tw/" target="_blank">台灣公司關係圖</a>、<a href="https://invoice-helper.timdream.org/" target="_blank">手開發票小幫手</a>等功能，也有 Simpany 及許多會計事務所串接使用。資料庫採用 MySQL + ElasticSearch。</p>
+                <p>「Retail Vision」是歐噴 OpenFun為一家全球性零售連鎖企業提供的大數據解決方案。通過分析海量的消費者購物數據、地理位置信息以及節日銷售記錄，我們幫助客戶建立了高度準確的市場預測模型。這使得企業能夠更靈活地調整庫存、優化產品陳列，並提前洞察市場趨勢，從而提高了銷售效率和利潤。</p>
+                <p>我們幫助客戶建立了高度準確的市場預測模型。這使得企業能夠更靈活地調整庫存、優化產品陳列，並提前洞察市場趨勢</p>
               </div>
               <div class="url">
                 <span class="material-symbols-rounded">
                   link
                 </span>
-                <a href="https://company-graph.g0v.ronny.tw" target="_blank">https://company-graph.g0v.ronny.tw</a>
+                <a href="#" target="_blank">https://demo.openfun.tw/test</a>
               </div>
             </div>
           </div>
@@ -197,24 +283,81 @@
             </div>
             <div class="content">
               <div class="title">
-                開放立法院
+                Urban Insight 智慧城市規劃
               </div>
               <div class="tags">
                 <span class="tag tag--yellow">
-                  Legislature
+                  CITY
                 </span>
                 <span class="tag tag--green">
-                  g0v
+                  INSIGHT
                 </span>
               </div>
               <div class="desc">
-                <p>立法院每年產生一萬多則議案，每週召開十數場會議，每月公報產生數萬字文字的會議紀錄，原始格式從 Word、網頁、PDF 不等並分散在各種來源，本公司利用多隻爬蟲進行自動化資料清理匯入，並製成 API 以及相關服務，幫助<a href="https://ccw.org.tw/" target="_blank">公民監督國會聯盟</a>自動化立委評鑑及法案對照表瀏覽，以及幫助報導者產製「<a href="https://www.twreporter.org/a/data-reporter-2024-election-10th-legislators-performance" target="_blank">你家立委4年來為哪些議題發聲？</a>」報導。</p>
+                <p>「Urban Insight」是歐噴 OpenFun為台南市政府設計的大數據解決方案。我們利用城市各種感應器、交通流量數據和市民反饋信息，建立了智慧城市分析平台。通過這個平台，政府可以實時監測城市運行狀況、預測交通擁擠情況，從而進行更有效的城市規劃和資源配置，提升市民生活品質。</p>
+                <p>我們利用城市各種感應器、交通流量數據和市民反饋信息，建立了智慧城市分析平台。</p>
               </div>
               <div class="url">
                 <span class="material-symbols-rounded">
                   link
                 </span>
-                <a href="https://openfunltd.github.io/law-diff/" target="_blank">https://openfunltd.github.io/law-diff/</a>
+                <a href="#" target="_blank">https://demo.openfun.tw/test</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="/images/work3.jpg" loading="lazy">
+            </div>
+            <div class="content">
+              <div class="title">
+                Social Pulse 社交媒體影響力分析
+              </div>
+              <div class="tags">
+                <span class="tag tag--green">
+                  SNS
+                </span>
+                <span class="tag tag--blue">
+                  ANALYTICS
+                </span>
+              </div>
+              <div class="desc">
+                <p>「Social Pulse」是歐噴 OpenFun針對一家媒體公司開發的大數據分析工具。我們整合了多個社交媒體平台的數據源，通過情感分析、關鍵詞提取和用戶互動模式識別，幫助客戶評估了他們在社交媒體上的品牌影響力。這使得企業能夠更有針對性地制定營銷策略，增強品牌知名度和忠誠度。</p>
+                <p>我們整合了多個社交媒體平台的數據源，通過情感分析、關鍵詞提取和用戶互動模式識別，幫助客戶評估了他們在社交媒體上的品牌影響力。</p>
+              </div>
+              <div class="url">
+                <span class="material-symbols-rounded">
+                  link
+                </span>
+                <a href="#" target="_blank">https://demo.openfun.tw/test</a>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="image">
+              <img src="/images/work4.jpg" loading="lazy">
+            </div>
+            <div class="content">
+              <div class="title">
+                Urban Insight 智慧城市規劃
+              </div>
+              <div class="tags">
+                <span class="tag tag--yellow">
+                  CITY
+                </span>
+                <span class="tag tag--green">
+                  INSIGHT
+                </span>
+              </div>
+              <div class="desc">
+                <p>「Urban Insight」是歐噴 OpenFun為台南市政府設計的大數據解決方案。我們利用城市各種感應器、交通流量數據和市民反饋信息，建立了智慧城市分析平台。通過這個平台，政府可以實時監測城市運行狀況、預測交通擁擠情況，從而進行更有效的城市規劃和資源配置，提升市民生活品質。</p>
+                <p>我們利用城市各種感應器、交通流量數據和市民反饋信息，建立了智慧城市分析平台。</p>
+              </div>
+              <div class="url">
+                <span class="material-symbols-rounded">
+                  link
+                </span>
+                <a href="#" target="_blank">https://demo.openfun.tw/test</a>
               </div>
             </div>
           </div>
@@ -224,7 +367,6 @@
       <section class="members" id="members">
         <div class="container">
           <h2>MEMBERS</h2>
-          <!-- 照片的mask勿刪 -->
           <svg width="0" height="0" preserveAspectRatio="none">
             <defs>
               <clipPath id="avatar_vec" clipPathUnits="objectBoundingBox" transform="scale(0.01,0.01)">
@@ -233,84 +375,36 @@
               </clipPath>
             </defs>
           </svg>
-
-          <!-- 大的 -->
-
-          <div class="member member--big">
-            <div class="avatar">
-              <img src="/images/avatar1.jpg" alt="王向榮" loading="lazy">
-            </div>
-            <div class="content">
+          <div class="list">
+            <div class="member">
+              <div class="avatar">
+                <img src="/images/avatar1.jpg" alt="王向榮" loading="lazy">
+              </div>
               <div class="name">
-                Ronny
+                王向榮
               </div>
               <div class="title">
-                CEO / 創辦人
-              </div>
-              <div class="desc">
-                長期 g0v 零時政府參與者，在 g0v 曾發起新聞小幫手、求職小幫手、台灣公司資料、開放政治獻金、開放標案等專案，並且曾因為求職小幫手被媒體稱為佛心工程師，希望可以透過開源和開放的力量讓世界更好。
+                Chief Executive Officer
               </div>
               <div class="intro">
-                <ul>
-                  <li>PIXNET 技術研發協理</li>
-                  <li>走吧旅行社技術研發副理</li>
-                  <li>李慕約公司共同創辦人</li>
-                  <li>g0v 零時政府揪松團執行委員</li>
-                  <li>行政院、考試院、國發會、農委會、衛福部、教育部、陸委會等開放資料諮詢委員</li>
-                  <li>立法院開放國會民間委員</li>
-                  <li>公務人力發展中心「開放資料應用班」講師</li>
-                </ul>
+                擁有豐富的數據科學經驗，擅長機器學習和大數據處理，致力於解決企業挑戰並提供可行解決方案
               </div>
             </div>
-          </div>
-
-          <div class="member member--big">
-            <div class="avatar">
-              <img src="/images/avatar2.jpg" alt="Tmonk" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="name">
-                tmonk
-              </div>
-              <!-- <div class="title"></div> -->
-              <div class="desc">
-                三餐自己煮、從零到有自己架設直播設備，凡事喜歡親力親為。但同時對自動化科技抱有濃厚的興趣跟熱情。希望每天都能睡滿八小時。最喜歡的數學證明是康托爾的對角線論證。
-              </div>
-              <div class="intro">
-                <ul>
-                  <li>宏碁司法院系統軟體工程師</li>
-                  <li>臺北市市有閒置空間整合查詢平台網站工程師</li>
-                  <li>直播導播</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <!-- 小的 -->
-          <!-- <div class="list">
             <div class="member">
               <div class="avatar">
                 <img src="/images/avatar2.jpg" alt="Tmonk" loading="lazy">
               </div>
-              <div class="content">
-                <div class="name">
-                  tmonk
-                </div>
-                <div class="title">
-                  程式工程師
-                </div>
-                <div class="desc">
-                  三餐自己煮、從零到有自己架設直播設備，凡事喜歡親力親為。但同時對自動化科技抱有濃厚的興趣跟熱情。希望每天都能睡滿八小時。最喜歡的數學證明是康托爾的對角線論證。
-                </div>
-                <div class="intro">
-                  <ul>
-                    <li>宏碁司法院系統軟體工程師</li>
-                    <li>臺北市市有閒置空間整合查詢平台網站工程師</li>
-                    <li>直播導播</li>
-                  </ul>
-                </div>
+              <div class="name">
+                Tmonk
+              </div>
+              <div class="title">
+                程式工程師
+              </div>
+              <div class="intro">
+                數據工程領域的專家，曾成功領導大型數據倉庫項目，擅長Realtime數據處理和分析與優化。
               </div>
             </div>
-          </div> -->
+          </div>
         </div>
       </section>
     </div>
