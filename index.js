@@ -10,6 +10,9 @@ app.use('/js', express.static(__dirname + '/js'))
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/index.html'))
 })
+app.get('/ly-user-study', function(req, res) {
+  res.sendFile(path.join(__dirname, '/ly-user-study/index.html'))
+})
 app.use('/robots.txt', express.static(__dirname + '/robots.txt'))
  
 app.listen(3006)
