@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="https://openfun.tw/favicon.ico" type="image/x-icon">
+    <title>Digital Tools for Parliament Information in Taiwan</title>
+    <meta property="og:type" content="document" />
+    <meta property="og:title" content="Legislative Data Access: Needs, Challenges, and Digital Tool Development Suggestions" />
+    <meta property="og:description" content="Interviewed 11 power users to identify pain points in legislative data access" />
+    <meta property="og:image" content="https://openfun.tw/images/work5.png" />
+    <meta property="og:url" content="https://openfun.tw/ly-user-study_en" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        #download {
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="download">
+        <h1>[歐噴研究報告]<br>臺灣立法院資料搜集及運用的現況與挑戰</h1>
+        <p>您的瀏覽器無法正確顯示嵌入的 PDF，請下載 PDF 檔瀏覽：<a href="https://github.com/openfunltd/ly-user-study/raw/refs/heads/main/Digital_Tools_for_Parliament_Information_in_Taiwan.pdf" download>下載 PDF</a>
+        </p>
+    </div>
+    <embed id="show" src="https://openfunltd.github.io/ly-user-study/Digital_Tools_for_Parliament_Information_in_Taiwan.pdf" width="100%" height="100%" type="application/pdf" />
+    <script>
+      const userAgent = navigator.userAgent.toLowerCase();
+      let isIOS = /iphone|ipad|ipod/.test(userAgent);
+      const isAndroid = /android/.test(userAgent);
+      const isFirefox = /firefox/.test(userAgent);
+
+      //userAgent of iPad looks same as iMac sometime. Need to check isTouchDevice to find out
+      if (userAgent.includes('macintosh')) {
+        //check is touch device
+        isIOS = ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+      }
+
+      let isShowing = false;
+      //personal computer
+      if (!isAndroid && !isIOS) {
+        isShowing = true;
+      }
+      //firefox on android
+      if (isAndroid && isFirefox) {
+        isShowing = true;
+      }
+
+      if (isShowing) {
+        const downloadDiv = document.getElementById('download');
+        downloadDiv.style.display = 'none';
+      } else {
+        const showEmbed = document.getElementById('show');
+        showEmbed.style.display = 'none';
+      }
+    </script>
+</body>
+</html>
