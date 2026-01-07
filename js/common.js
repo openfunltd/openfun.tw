@@ -25,3 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const app = createApp(zipper)
   app.mount('._index')
 })
+
+const currentYear = document.getElementById('current-year');
+if (currentYear) {
+  currentYear.innerText = new Date().getFullYear();
+}
