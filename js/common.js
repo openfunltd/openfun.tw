@@ -13,10 +13,13 @@ const zipper = {
       bgPos.value = document.scrollingElement.scrollTop / 5
     })
 
+    const workListType = ref('product')
+
     return {
       rwdMenuVisible,
       headerLightBg,
-      bgPos
+      bgPos,
+      workListType,
     }
   }
 }
@@ -30,3 +33,18 @@ const currentYear = document.getElementById('current-year');
 if (currentYear) {
   currentYear.innerText = new Date().getFullYear();
 }
+
+$(document).ready(function(){
+  $('.award-photos').owlCarousel({
+    margin: 10,
+    loop: true,
+    autoWidth: false,
+    items: 1,
+    responsive: {
+      767: {
+        autoWidth: true,
+        items: 0,
+      }
+    }
+  });
+});

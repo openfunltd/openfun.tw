@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-P99SGF4QQD"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-        gtag('config', 'G-P99SGF4QQD');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-P99SGF4QQD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-P99SGF4QQD');
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>歐噴有限公司 OpenFun Ltd.</title>
@@ -29,7 +30,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Pragati+Narrow&display=swap" rel="stylesheet">
   <!-- css -->
   <link rel="stylesheet" href="css/common.css">
+  <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="/js/vue.global.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dheereshag/coloured-icons@1.9.6/app/ci.min.css" />
   <script type="module" src="/js/common.js"></script>
 </head>
 <body class="_openfun _index">
@@ -110,9 +116,17 @@
             class="menu"
             :class="{ active: rwdMenuVisible }"
           >
-            <a href="#about" @click="rwdMenuVisible = false">ABOUT US</a>
-            <a href="#works" @click="rwdMenuVisible = false">WORKS</a>
-            <a href="#members" @click="rwdMenuVisible = false">MEMBERS</a>
+            <a href="#about" @click="rwdMenuVisible = false">About Us</a>
+            <a href="#works" @click="rwdMenuVisible = false">Works</a>
+            <a href="#news" @click="rwdMenuVisible = false">Latest News</a>
+            <a href="#keymoments" @click="rwdMenuVisible = false">Key Moments</a>
+            <a href="#members" @click="rwdMenuVisible = false">Members</a>
+            <a href="#partners" @click="rwdMenuVisible = false">Partners</a>
+            <span class="lang-switcher">
+              <a href="#">中</a>
+              /
+              <a href="#">EN</a>
+            </span>
           </div>
         </div>
       </div>
@@ -124,11 +138,13 @@
           <div class="top-main">
             <div class="content">
               <h1>
-                不只是達標<br>
-                還要做到更好
+                推動開放政府<br>
+                <small>
+                  以數位工具開創治理新可能
+                </small>
               </h1>
               <div class="desc">
-                完成與客戶之間合約的規格只是基本，我們並不滿足於此，我們希望能為客戶再多做一些，科技日新月異，而需求也可以在隨著產品逐漸成形而有改變，我們的目標是希望在時間成本範圍內，帶給客戶最好的服務！
+                OpenFun 致力於釋放開放資料的潛力。從 LawTrace、OpenBudget 到國會 AI 逐字稿，我們將政府資料轉化為可見的社會影響力，每一筆資料都能在數位轉型的浪潮中，化為推動治理改革的關鍵力量。化為推動治理改革的關鍵力量。構築更透明、更具行動力的數位公民社會。
               </div>
               <div class="action">
                 <a href="#works" class="btn btn--white btn--outline">
@@ -139,22 +155,25 @@
                 </a>
               </div>
             </div>
-            <img src="/images/kv.svg" class="kv">
           </div>
         </div>
       </section>
 
       <section class="about" id="about">
         <div class="container">
-          <h2>ABOUT US</h2>
+          <h2>
+            ABOUT
+            <small>
+              關於歐噴
+            </small>
+          </h2>
           <div class="content">
             <div class="intro">
-              <p>歐噴這名字，取自於 Open 這個單字，公司創辦人 Ronny 過去參與許多開放政府（Open Government）運動，長期推動開放資料（Open Data），並且使用及貢獻開放原始碼（Open Source）。創立歐噴公司，希望能將開放文化變成一家公司，召集有志一同的夥伴取之於開放，用之於開放，一起能在台灣推動開放文化。</p>
-              <p>英文名稱 OpenFun ，取自於「開放」兩字拆解後會變成「開」+「放」，就是 Open + Fun。我們相信實踐開放文化的過程是有趣的，開放原始碼讓世界上每個人都可以把心中的想法和對新技術的實作轉化為程式碼供別人使用，讓我們可以隨時都可以觸碰到最新技術，並將技術變成應用，我們也可以將我們的成果分享給別人，這樣的過程能不有趣嗎？</p>
-              <p>創辦人 Ronny 參與 g0v 零時政府十幾年，並發起了「台灣公司資料」、「公司關係圖」、「開放政府標案」、「開放政治獻金」、「求職小幫手」、「新聞小幫手」、「鄉民看電視」、「國會觀察家」...等專案，十幾年來探索資料爬蟲、開放資料、地理資料處理、搜尋引擎、資料視覺化、群眾外包、瀏覽器套件、影音處理、語音轉逐字稿、大型語言模型文字摘要等技術，這些專案其中許多也不只是黑客松期間的展示型專案，而是已經運作超過十年並且到現在仍在持續更新資料並提供服務，成立歐噴公司也是希望能將這些技術，為客戶帶來可以長久穩定運作的系統。</p>
-            </div>
-            <div class="flow">
-              <img src="/images/about.svg" loading="lazy">
+              <p><strong>「取之於開放，用之於開放：讓技術轉化為社會進步的有趣動力。」</strong></p>
+              <p>歐噴（OpenFun）的名字源自於對「開放」的拆解 —— 「開」與「放」，即是 Open 與 Fun。我們深信實踐開放文化（Open Culture）的過程不僅充滿挑戰，更具備改變社會的樂趣。我們召集志同道合的夥伴，將心中的創意與技術實作轉化為程式碼，不僅持續探索最新科技，更致力於將技術落實為應用，與世界共享成果。</p>
+              <p>創辦人 Ronny 作為 g0v 零時政府的長期參與者，並發起了「台灣公司資料」、「公司關係圖」、「開放政府標案」、「開放政治獻金」、「求職小幫手」、「新聞小幫手」、「鄉民看電視」、「國會觀察家」...等專案。這些經驗不只是黑客松的實驗，更是已穩定運作超過十年、持續服務大眾的成熟專案。在累積了深厚的資料爬蟲、地理資料處理、搜尋引擎、語音轉逐字稿及大型語言模型（LLM）等技術後，歐噴有限公司成立了。</p>
+              <p>現在，這份深耕十年的技術底蘊，轉化為解決公共問題的實體產品。歐噴開發了 OpenBudget 政府預算查詢，將繁雜難懂的預算書轉化為視覺化、可比較的結構化資料；透過 LawTrace 立法歷程查詢，將分散在各機關的法案資訊一鍵彙整，大幅降低公眾參與立法的門檻；並推出 立法院國會頻道 AI 即時轉換逐字稿，讓國會討論能以最快的速度轉化為可搜尋的文字紀錄。</p>
+              <p>歐噴專注於「開放政府」與「資料應用」兩大核心，致力於為客戶與公民社會提供長久穩定、具備實質影響力的數位工具，讓複雜的治理變得簡單、透明且易於參與。</p>
             </div>
           </div>
         </div>
@@ -162,178 +181,510 @@
 
       <section class="works" id="works">
         <div class="container">
-          <h2>WORKS</h2>
+          <h2>
+            WORKS
+            <small>
+              作品集
+            </small>
+          </h2>
+        
+          <div class="tabs">
+            <a
+              href="#"
+              :class="{active: workListType === 'product'}"
+              @click.prevent="workListType = 'product'">產品</a>
+            <a
+              href="#"
+              :class="{active: workListType === 'data'}"
+              @click.prevent="workListType = 'data'">資料</a>
+            <a
+              href="#"
+              :class="{active: workListType === 'research'}"
+              @click.prevent="workListType = 'research'">研究</a>
+            <a
+              href="#"
+              :class="{active: workListType === 'speech'}"
+              @click.prevent="workListType = 'speech'">專題演講</a>
+          </div>
+
+          <div
+            v-if="workListType === 'product'"
+            class="list">
+            <div class="item">
+              <div class="image">
+                <img src="/images/work7.png" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  OpenBudget 政府預算查詢
+                </div>
+                <div class="tags">
+                  <span class="tag tag--green">
+                    Budget
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>告別在數百個 PDF 與零散網頁中來回翻找的痛苦。長年以來，政府依法公開預算與決算書，卻多以難以使用的格式呈現，讓想理解政府如何花錢的人，必須把大量時間花在整理資料，而非分析與監督。</p>
+                  <p>預算查詢平台運用歐噴十多年政府資料爬蟲與清理經驗，將分散於各機關、各縣市、各年度的預決算書，整理為可搜尋、可比較的結構化資料庫，不必再下載成千上萬頁文件，就能快速掌握預算配置與變化。</p>
+                  <p>理解預算不再只是少數專業者的工作。透過直覺的查詢與比較介面，讓公民也能輕鬆參與預算討論，看懂政府把錢花到哪裡。</p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">link</span>
+                  <a href="https://budget.openfun.app" target="_blank">https://budget.openfun.app</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="/images/work6.png" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  Lawtrace 立法歷程查詢
+                </div>
+                <div class="tags">
+                  <span class="tag tag--yellow">
+                    Legislature
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>我們<a href="https://openfun.tw/ly-user-study/" target="_blank">透過研究</a>發現，即使是倡議團體、媒體記者、立委助理、事實查核團體等經常查詢立法院資料的專業工作者，在檢索法案資料時，依舊需要耗費大量時間，跨越多個網站與開啟一長串的分頁，或是埋首在數百頁的文件中才能找到所需資訊。</p>
+                  <p>對於不常使用立法院網站的一般民眾來說，想查法案資料更是困難重重。資料難以取得，背離立法院公開資料的初衷，公民因此難以關注修法進程，民主精神難以落實。</p>
+                  <p>LawTrace 將資訊彙整在一處。找尋資料時，我們可以少開幾個分頁、更有效率，查找的更愉快！</p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">link</span>
+                  <a href="https://lawtrace.tw" target="_blank">https://lawtrace.tw</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="/images/work1.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  台灣公司資料
+                </div>
+                <div class="tags">
+                  <span class="tag tag--red">
+                    COMPANY
+                  </span>
+                  <span class="tag tag--orange">
+                    g0v
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>2013年1月開始寫爬蟲，耗費三個月時間抓取完 200 萬家公司資料，之後建立起每日自動更新機制，持續更新至今，為台灣最完整公開公司資料，並且有使用 API 供人使用，衍生出像<a href="https://company-graph.g0v.ronny.tw/" target="_blank">台灣公司關係圖</a>、<a href="https://invoice-helper.timdream.org/" target="_blank">手開發票小幫手</a>等功能，也有 Simpany 及許多會計事務所串接使用。資料庫採用 MySQL + ElasticSearch。</p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://company-graph.g0v.ronny.tw" target="_blank">https://company-graph.g0v.ronny.tw</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="/images/work2.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  開放立法院
+                </div>
+                <div class="tags">
+                  <span class="tag tag--yellow">
+                    Legislature
+                  </span>
+                  <span class="tag tag--green">
+                    g0v
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>立法院每年產生一萬多則議案，每週召開十數場會議，每月公報產生數萬字文字的會議紀錄，原始格式從 Word、網頁、PDF 不等並分散在各種來源，本公司利用多隻爬蟲進行自動化資料清理匯入，並製成 API 以及相關服務，幫助<a href="https://ccw.org.tw/" target="_blank">公民監督國會聯盟</a>自動化立委評鑑及法案對照表瀏覽，以及幫助報導者產製「<a href="https://www.twreporter.org/a/data-reporter-2024-election-10th-legislators-performance" target="_blank">你家立委4年來為哪些議題發聲？</a>」報導。</p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://openfunltd.github.io/law-diff/" target="_blank">https://openfunltd.github.io/law-diff/</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="/images/work3.png" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  立法院國會頻道AI即時轉換逐字稿
+                </div>
+                <div class="tags">
+                  <span class="tag tag--yellow">
+                    Legislature
+                  </span>
+                  <span class="tag tag--orange">
+                    AI
+                  </span>
+                </div>
+                <div class="desc">
+                    <p>利用獨立主機加上 4090 顯示卡，建立自動化更新機制，在八個委員會同時開會的情況下，也能夠接近即時（影片釋出後半小時內）產製逐字稿，可產生文字供後續 AI 使用，讓大家不用盯場看影片也可以追蹤立法院發生什麼事。</p>
+                    <p>使用技術為：PHP(<a href="https://github.com/openfunltd/mini-engine" target="_blank">mini-engine</a>)、Whisper.cpp、WhisperX、PyAnnote</p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://dataly.openfun.app/collection/list/ivod" target="_blank">https://dataly.openfun.app/collection/list/ivod</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-if="workListType === 'data'"
+            class="list">
+            <div class="item">
+              <div class="image">
+                <img src="/images/work_img_placeholder.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  LY API
+                </div>
+                <div class="tags">
+                  <span class="tag tag--yellow">
+                    API
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>
+                    無資料
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="/images/work_img_placeholder.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  Budget DATA
+                </div>
+                <div class="tags">
+                  <span class="tag tag--yellow">
+                    API
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>
+                    無資料
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-if="workListType === 'research'"
+            class="list">
+            <div class="item">
+              <div class="image">
+                <img src="/images/work5.png" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  研究報告 - 立法院資料取用需求、挑戰與數位工具發展建議
+                </div>
+                <div class="tags">
+                  <span class="tag tag--yellow">
+                    Legislature
+                  </span>
+                  <span class="tag tag--blue">
+                    UI/UX
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>
+                    使用者對立法院運作、法律專業和政治素養的知識，影響其查詢立法院資料的效率，也決定他們使用資料的方式。立法院資料收置邏輯紊亂，讓使用者難以查找資料；更新不夠即時、難以後製的問題，讓使用者被迫投入大量時間處理資料。
+                  </p>
+                  <p>
+                    本研究探討取用立法院資料的需求與挑戰，並提出數位工具的開發建議，期望藉此提升立法院資料的易用性。
+                  </p>
+                  <p>
+                      <a href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" target="_blank">CC BY 4.0</a>
+                      by OpenFun, Sandra, 小海, Claire
+                  </p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://openfun.tw/ly-user-study/" target="_blank">https://openfun.tw/ly-user-study</a>
+                  <br>
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://openfun.tw/ly-user-study_en/" target="_blank">https://openfun.tw/ly-user-study_en</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-if="workListType === 'speech'"
+            class="list">
+            <div class="item">
+              <div class="image">
+                <img src="//img.youtube.com/vi/87SxHPf5mD4/hqdefault.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  聯發科技開放資料研究社演講 | 開放資料 x 開源協作：如何用有限資源做出公共基礎建設 lawtrace 的開放立法院資料之路
+                </div>
+                <div class="tags">
+                  <span class="tag tag--blue">
+                    DATA
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>
+                    資料待補
+                  </p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://www.youtube.com/watch?v=87SxHPf5mD4&t=2361s" target="_blank">https://www.youtube.com/watch?v=87SxHPf5mD4&t=2361s</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="//img.youtube.com/vi/H7u0mnHHQr4/hqdefault.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  設計 Lawtrace 立法歷程查詢平台時的考量及遺珠之憾
+                </div>
+                <div class="tags">
+                  <span class="tag tag--blue">
+                    DATA
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>
+                    資料待補
+                  </p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://www.youtube.com/watch?v=H7u0mnHHQr4" target="_blank">https://www.youtube.com/watch?v=H7u0mnHHQr4</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="//img.youtube.com/vi/oAOHe7C-C98/hqdefault.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  從數據到行動 - Lawtrace 如何幫助 NGO 追蹤立法歷程
+                </div>
+                <div class="tags">
+                  <span class="tag tag--blue">
+                    DATA
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>
+                    資料待補
+                  </p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://www.youtube.com/watch?v=oAOHe7C-C98" target="_blank">https://www.youtube.com/watch?v=oAOHe7C-C98</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="//img.youtube.com/vi/-_VR7OcBu0Y/hqdefault.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  打造開源工具，推動立法院開放資料的倡議路徑
+                </div>
+                <div class="tags">
+                  <span class="tag tag--blue">
+                    DATA
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>
+                    資料待補
+                  </p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://www.youtube.com/watch?v=-_VR7OcBu0Y" target="_blank">https://www.youtube.com/watch?v=-_VR7OcBu0Y</a>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="image">
+                <img src="//img.youtube.com/vi/L3RiGvRrqOk/hqdefault.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  g0v 社群 10 年的開放國會之路，怎麼走到 lawtrace
+                </div>
+                <div class="tags">
+                  <span class="tag tag--blue">
+                    DATA
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>
+                    資料待補
+                  </p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://www.youtube.com/watch?v=L3RiGvRrqOk&t=668s" target="_blank">https://www.youtube.com/watch?v=L3RiGvRrqOk&t=668s</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="list">
-          <div class="item">
-            <div class="image">
-              <img src="/images/work7.png" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="title">
-                OpenBudget 政府預算查詢
-              </div>
-              <div class="tags">
+      </section>
+
+      <section class="news" id="news">
+        <div class="container">
+          <h2>
+            LATEST NEWS
+            <small>
+              最新消息
+            </small>
+          </h2>
+          <div class="news-list">
+            <!-- 最多十個 -->
+            <div class="item">
+              <div class="type">
                 <span class="tag tag--green">
-                  Budget
+                  LawTrace
                 </span>
+              </div>
+              <div class="date">
+                <span class="material-symbols-rounded">
+                  date_range
+                </span>
+                2026-01-21
               </div>
               <div class="desc">
-                <p>告別在數百個 PDF 與零散網頁中來回翻找的痛苦。長年以來，政府依法公開預算與決算書，卻多以難以使用的格式呈現，讓想理解政府如何花錢的人，必須把大量時間花在整理資料，而非分析與監督。</p>
-                <p>預算查詢平台運用歐噴十多年政府資料爬蟲與清理經驗，將分散於各機關、各縣市、各年度的預決算書，整理為可搜尋、可比較的結構化資料庫，不必再下載成千上萬頁文件，就能快速掌握預算配置與變化。</p>
-                <p>理解預算不再只是少數專業者的工作。透過直覺的查詢與比較介面，讓公民也能輕鬆參與預算討論，看懂政府把錢花到哪裡。</p>
-              </div>
-              <div class="url">
-                <span class="material-symbols-rounded">link</span>
-                <a href="https://budget.openfun.app" target="_blank">https://budget.openfun.app</a>
+                <a href="#">想快速上手 lawtrace？最新使用指引帶您掌握核心功能與立法歷程</a>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="image">
-              <img src="/images/work6.png" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="title">
-                Lawtrace 立法歷程查詢
-              </div>
-              <div class="tags">
-                <span class="tag tag--yellow">
-                  Legislature
+            <div class="item">
+              <div class="type">
+                <span class="tag tag--orange">
+                  OpenBudget
                 </span>
+              </div>
+              <div class="date">
+                <span class="material-symbols-rounded">
+                  date_range
+                </span>
+                2026-01-21
               </div>
               <div class="desc">
-                <p>我們<a href="https://openfun.tw/ly-user-study/" target="_blank">透過研究</a>發現，即使是倡議團體、媒體記者、立委助理、事實查核團體等經常查詢立法院資料的專業工作者，在檢索法案資料時，依舊需要耗費大量時間，跨越多個網站與開啟一長串的分頁，或是埋首在數百頁的文件中才能找到所需資訊。</p>
-                <p>對於不常使用立法院網站的一般民眾來說，想查法案資料更是困難重重。資料難以取得，背離立法院公開資料的初衷，公民因此難以關注修法進程，民主精神難以落實。</p>
-                <p>LawTrace 將資訊彙整在一處。找尋資料時，我們可以少開幾個分頁、更有效率，查找的更愉快！</p>
-              </div>
-              <div class="url">
-                <span class="material-symbols-rounded">link</span>
-                <a href="https://lawtrace.tw" target="_blank">https://lawtrace.tw</a>
+                <a href="#">新功能：首頁說明三大修法關鍵時刻點的用途、區隔當屆與過往的未三讀議案，追蹤法案脈絡更簡單了！</a>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="image">
-              <img src="/images/work5.png" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="title">
-                研究報告 - 立法院資料取用需求、挑戰與數位工具發展建議
-              </div>
-              <div class="tags">
-                <span class="tag tag--yellow">
-                  Legislature
-                </span>
+            <div class="item">
+              <div class="type">
                 <span class="tag tag--blue">
-                  UI/UX
+                  Project C
                 </span>
+              </div>
+              <div class="date">
+                <span class="material-symbols-rounded">
+                  date_range
+                </span>
+                2026-01-18
               </div>
               <div class="desc">
-                <p>
-                  使用者對立法院運作、法律專業和政治素養的知識，影響其查詢立法院資料的效率，也決定他們使用資料的方式。立法院資料收置邏輯紊亂，讓使用者難以查找資料；更新不夠即時、難以後製的問題，讓使用者被迫投入大量時間處理資料。
-                </p>
-                <p>
-                  本研究探討取用立法院資料的需求與挑戰，並提出數位工具的開發建議，期望藉此提升立法院資料的易用性。
-                </p>
-                <p>
-                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" target="_blank">CC BY 4.0</a>
-                    by OpenFun, Sandra, 小海, Claire
-                </p>
-              </div>
-              <div class="url">
-                <span class="material-symbols-rounded">
-                  link
-                </span>
-                <a href="https://openfun.tw/ly-user-study/" target="_blank">https://openfun.tw/ly-user-study</a>
-                <br>
-                <span class="material-symbols-rounded">
-                  link
-                </span>
-                <a href="https://openfun.tw/ly-user-study_en/" target="_blank">https://openfun.tw/ly-user-study_en</a>
+                <a href="#">想快速上手 lawtrace？最新使用指引帶您掌握核心功能與立法歷程</a>
               </div>
             </div>
-          </div>
-          <div class="item">
-            <div class="image">
-              <img src="/images/work1.jpg" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="title">
-                台灣公司資料
+            <div class="item">
+              <div class="type">
+                <span class="tag tag--purple">
+                  Project D
+                </span>
               </div>
-              <div class="tags">
+              <div class="date">
+                <span class="material-symbols-rounded">
+                  date_range
+                </span>
+                2026-01-18
+              </div>
+              <div class="desc">
+                <a href="#">新功能：納入部預告版草案！經歷過程、法案比對都能看，從機關提案起完整追蹤法案軌跡</a>
+              </div>
+            </div>
+            <div class="item">
+              <div class="type">
                 <span class="tag tag--red">
-                  COMPANY
+                  Project E
                 </span>
-                <span class="tag tag--orange">
-                  g0v
+              </div>
+              <div class="date">
+                <span class="material-symbols-rounded">
+                  date_range
                 </span>
+                2026-01-18
               </div>
               <div class="desc">
-                <p>2013年1月開始寫爬蟲，耗費三個月時間抓取完 200 萬家公司資料，之後建立起每日自動更新機制，持續更新至今，為台灣最完整公開公司資料，並且有使用 API 供人使用，衍生出像<a href="https://company-graph.g0v.ronny.tw/" target="_blank">台灣公司關係圖</a>、<a href="https://invoice-helper.timdream.org/" target="_blank">手開發票小幫手</a>等功能，也有 Simpany 及許多會計事務所串接使用。資料庫採用 MySQL + ElasticSearch。</p>
-              </div>
-              <div class="url">
-                <span class="material-symbols-rounded">
-                  link
-                </span>
-                <a href="https://company-graph.g0v.ronny.tw" target="_blank">https://company-graph.g0v.ronny.tw</a>
+                <a href="#">新功能：首頁說明三大修法關鍵時刻點的用途、區隔當屆與過往的未三讀議案，追蹤法案脈絡更簡單了！</a>
               </div>
             </div>
           </div>
-          <div class="item">
-            <div class="image">
-              <img src="/images/work2.jpg" loading="lazy">
+        </div>
+      </section>
+
+      <section class="keymoments" id="keymoments">
+        <div class="container">
+          <h2>
+            KEY MOMENTS
+            <small>
+              重要時刻
+            </small>
+          </h2>
+          <div class="owl-carousel owl-theme award-photos">
+            <div class="item">
+              <img src="/images/award1.jpg" alt="總統發黑客松頒獎典禮照片">
+              <div class="desc">總統發黑客松頒獎典禮照片</div>
             </div>
-            <div class="content">
-              <div class="title">
-                開放立法院
-              </div>
-              <div class="tags">
-                <span class="tag tag--yellow">
-                  Legislature
-                </span>
-                <span class="tag tag--green">
-                  g0v
-                </span>
-              </div>
-              <div class="desc">
-                <p>立法院每年產生一萬多則議案，每週召開十數場會議，每月公報產生數萬字文字的會議紀錄，原始格式從 Word、網頁、PDF 不等並分散在各種來源，本公司利用多隻爬蟲進行自動化資料清理匯入，並製成 API 以及相關服務，幫助<a href="https://ccw.org.tw/" target="_blank">公民監督國會聯盟</a>自動化立委評鑑及法案對照表瀏覽，以及幫助報導者產製「<a href="https://www.twreporter.org/a/data-reporter-2024-election-10th-legislators-performance" target="_blank">你家立委4年來為哪些議題發聲？</a>」報導。</p>
-              </div>
-              <div class="url">
-                <span class="material-symbols-rounded">
-                  link
-                </span>
-                <a href="https://openfunltd.github.io/law-diff/" target="_blank">https://openfunltd.github.io/law-diff/</a>
-              </div>
+            <div class="item">
+              <img src="/images/award2.jpg" alt="數發部開源貢獻獎">
+              <div class="desc">數發部開源貢獻獎</div>
             </div>
-          </div>
-          <div class="item">
-            <div class="image">
-              <img src="/images/work3.png" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="title">
-                立法院國會頻道AI即時轉換逐字稿
-              </div>
-              <div class="tags">
-                <span class="tag tag--yellow">
-                  Legislature
-                </span>
-                <span class="tag tag--orange">
-                  AI
-                </span>
-              </div>
-              <div class="desc">
-                  <p>利用獨立主機加上 4090 顯示卡，建立自動化更新機制，在八個委員會同時開會的情況下，也能夠接近即時（影片釋出後半小時內）產製逐字稿，可產生文字供後續 AI 使用，讓大家不用盯場看影片也可以追蹤立法院發生什麼事。</p>
-                  <p>使用技術為：PHP(<a href="https://github.com/openfunltd/mini-engine" target="_blank">mini-engine</a>)、Whisper.cpp、WhisperX、PyAnnote</p>
-              </div>
-              <div class="url">
-                <span class="material-symbols-rounded">
-                  link
-                </span>
-                <a href="https://dataly.openfun.app/collection/list/ivod" target="_blank">https://dataly.openfun.app/collection/list/ivod</a>
-              </div>
+            <div class="item">
+              <img src="/images/award1.jpg" alt="總統發黑客松頒獎典禮照片">
+              <div class="desc">以後如果有新的照片就加進來</div>
             </div>
           </div>
         </div>
@@ -341,111 +692,53 @@
 
       <section class="members" id="members">
         <div class="container">
-          <h2>MEMBERS</h2>
-          <!-- 照片的mask勿刪 -->
-          <svg width="0" height="0" preserveAspectRatio="none">
-            <defs>
-              <clipPath id="avatar_vec" clipPathUnits="objectBoundingBox" transform="scale(0.01,0.01)">
-                <path d="M78.4,5.7l19.2-5.6c1.4-0.4,2.7,0.9,2.3,2.3l-5.6,19.2c-5.4,18.5-5.4,38.3,0,56.8l5.6,19.2 c0.4,1.4-0.9,2.7-2.3,2.3l-19.2-5.6c-18.5-5.4-38.3-5.4-56.8,0L2.4,99.9C1,100.3-0.3,99,0.1,97.6l5.6-19.2c5.4-18.5,5.4-38.3,0-56.8 L0.1,2.4C-0.3,1,1-0.3,2.4,0.1l19.2,5.6C40.1,11.1,59.9,11.1,78.4,5.7z"/>
-                <!-- <path d="M86.3,42.1l12.4,6.8c0.9,0.5,0.9,1.8,0,2.3l-12.4,6.8c-12,6.6-21.8,16.4-28.4,28.4l-6.8,12.4 c-0.5,0.9-1.8,0.9-2.3,0l-6.8-12.4c-6.6-12-16.4-21.8-28.4-28.4L1.2,51.2c-0.9-0.5-0.9-1.8,0-2.3l12.4-6.8 c12-6.6,21.8-16.4,28.4-28.4l6.8-12.4c0.5-0.9,1.8-0.9,2.3,0l6.8,12.4C64.5,25.6,74.4,35.5,86.3,42.1z"> -->
-              </clipPath>
-            </defs>
-          </svg>
+          <h2>
+            MEMBERS
+            <small>
+              歐噴成員
+            </small>
+          </h2>
 
-          <!-- 大的 -->
-
-          <div class="member member--big">
-            <div class="avatar">
-              <img src="/images/avatar1.jpg" alt="王向榮" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="name">
-                Ronny
-              </div>
-              <div class="title">
-                CEO / 創辦人
-              </div>
-              <div class="desc">
-                長期 g0v 零時政府參與者，在 g0v 曾發起新聞小幫手、求職小幫手、台灣公司資料、開放政治獻金、開放標案等專案，並且曾因為求職小幫手被媒體稱為佛心工程師，希望可以透過開源和開放的力量讓世界更好。
-              </div>
-              <div class="intro">
-                <ul>
-                  <li>PIXNET 技術研發協理</li>
-                  <li>走吧旅行社技術研發副理</li>
-                  <li>李慕約公司共同創辦人</li>
-                  <li>g0v 零時政府揪松團執行委員</li>
-                  <li>行政院、考試院、國發會、農委會、衛福部、教育部、陸委會等開放資料諮詢委員</li>
-                  <li>立法院開放國會民間委員</li>
-                  <li>公務人力發展中心「開放資料應用班」講師</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="member member--big">
-            <div class="avatar">
-              <img src="/images/avatar2.png" alt="Tmonk" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="name">
-                tmonk
-              </div>
-              <div class="title">資深程式設計師</div>
-              <div class="desc">
-                三餐自己煮、從零到有自己架設直播設備，凡事喜歡親力親為。但同時對自動化科技抱有濃厚的興趣跟熱情。希望每天都能睡滿八小時。最喜歡的數學證明是康托爾的對角線論證。
-              </div>
-              <div class="intro">
-                <ul>
-                  <li>宏碁司法院系統軟體工程師</li>
-                  <li>臺北市市有閒置空間整合查詢平台網站工程師</li>
-                  <li>直播導播</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div class="member member--big">
-            <div class="avatar">
-              <img src="/images/avatar-yo.jpg" alt="yo" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="name">
-                yo
-              </div>
-              <div class="title">資深程式設計師</div>
-              <div class="desc">
-                有自我身分認同的問題，近期的傾向是攝影創作者 / 生成式藝術創作者 / 後端工程師
-              </div>
-            </div>
-          </div>
-
-          <div class="member member--big">
-            <div class="avatar">
-              <img src="/images/avatar4.png" alt="Claire" loading="lazy">
-            </div>
-            <div class="content">
-              <div class="name">
-                Claire
-              </div>
-              <div class="title">專案經理</div>
-              <div class="desc">
-                因為寫政治所的碩士論文而接觸開源的世界，從此愛上開放協作的文化，持續嘗試將開源精神與倡議途徑結合。喜歡研究新事物、從有趣的人們身上學習新知。
-              </div>
-            </div>
-          </div>
-          <!-- 小的 -->
-          <!-- <div class="list">
+          <div class="founder">
             <div class="member">
               <div class="avatar">
-                <img src="/images/avatar2.jpg" alt="Tmonk" loading="lazy">
+                <img src="/images/avatar1.jpg" alt="王向榮" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="name">
+                  Ronny
+                </div>
+                <div class="title">
+                  CEO / 創辦人
+                </div>
+                <div class="desc">
+                  長期 g0v 零時政府參與者，在 g0v 曾發起新聞小幫手、求職小幫手、台灣公司資料、開放政治獻金、開放標案等專案，並且曾因為求職小幫手被媒體稱為佛心工程師，希望可以透過開源和開放的力量讓世界更好。
+                </div>
+                <div class="intro">
+                  <ul>
+                    <li>PIXNET 技術研發協理</li>
+                    <li>走吧旅行社技術研發副理</li>
+                    <li>李慕約公司共同創辦人</li>
+                    <li>g0v 零時政府揪松團執行委員</li>
+                    <li>行政院、考試院、國發會、農委會、衛福部、教育部、陸委會等開放資料諮詢委員</li>
+                    <li>立法院開放國會民間委員</li>
+                    <li>公務人力發展中心「開放資料應用班」講師</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="member-list">
+            <div class="member">
+              <div class="avatar">
+                <img src="/images/avatar2.png" alt="Tmonk" loading="lazy">
               </div>
               <div class="content">
                 <div class="name">
                   tmonk
                 </div>
-                <div class="title">
-                  程式工程師
-                </div>
+                <div class="title">資深程式設計師</div>
                 <div class="desc">
                   三餐自己煮、從零到有自己架設直播設備，凡事喜歡親力親為。但同時對自動化科技抱有濃厚的興趣跟熱情。希望每天都能睡滿八小時。最喜歡的數學證明是康托爾的對角線論證。
                 </div>
@@ -458,7 +751,121 @@
                 </div>
               </div>
             </div>
-          </div> -->
+
+            <div class="member">
+              <div class="avatar">
+                <img src="/images/avatar-yo.jpg" alt="yo" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="name">
+                  yo
+                </div>
+                <div class="title">資深程式設計師</div>
+                <div class="desc">
+                  有自我身分認同的問題，近期的傾向是攝影創作者 / 生成式藝術創作者 / 後端工程師
+                </div>
+              </div>
+            </div>
+
+            <div class="member">
+              <div class="avatar">
+                <img src="/images/avatar4.png" alt="Claire" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="name">
+                  Claire
+                </div>
+                <div class="title">專案經理</div>
+                <div class="desc">
+                  因為寫政治所的碩士論文而接觸開源的世界，從此愛上開放協作的文化，持續嘗試將開源精神與倡議途徑結合。喜歡研究新事物、從有趣的人們身上學習新知。
+                </div>
+              </div>
+            </div>
+
+            <div class="member">
+              <div class="avatar">
+                <img src="https://placehold.co/600x600/EEE/31343C" alt="Claire" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="name">
+                  JK
+                </div>
+                <div class="title">專案經理</div>
+                <div class="desc">
+                  政治學碩士，骨子裡是個實務經驗更豐富的行動派。曾經沉浸在國會與制度研究的坑裡，後來發現比起理論，更喜歡在現實的制度中滾動。目前正熱衷於探詢全球民主的下一步。
+                </div>
+              </div>
+            </div>
+
+            <div class="member">
+              <div class="avatar">
+                <img src="/images/avatar5.jpg" alt="Claire" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="name">
+                  Sandra
+                </div>
+                <div class="title">服務設計師</div>
+                <div class="desc">
+                  熱愛梳理使用者需求跟降低所有人使用數位工具的門檻，平常執行的專案常常跟公共服務或公民科技有關。英文/日文是商業應用程度，但台語卻只能勉強對話。
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners" id="partners">
+        <div class="container">
+          <h2>
+            PARTNERS
+            <small>
+              合作夥伴
+            </small>
+          </h2>
+
+          <h3>串連在地社群，接軌國際民主。</h3>
+          <div class="desc">與志同道合的夥伴，共同建構更開放的未來。</div>
+
+          <div class="partner-wrapper">
+            <div class="partner-group">
+              <div class="partner-title">
+                並肩的倡議者
+                <small>
+                  Standing Together as Advocates
+                </small>
+              </div>
+              <!-- <div class="partner-title">
+                國際合作
+                <small>
+                  International Partnerships
+                </small>
+              </div> -->
+              <!-- <div class="partner-title">
+                在地實踐
+                <small>
+                  Domestic Collaborations
+                </small>
+              </div> -->
+              <div class="logo-list">
+                <a href="https://www.wfd.org/" class="item">
+                  <img src="/images/partner/wfd.svg" alt="WFD (Westminster Foundation for Democracy，西敏寺民主基金會)">
+                </a>
+                <a href="https://www.freiheit.org/zh/taiwan" class="item">
+                  <img src="/images/partner/fnf.svg" alt="FNF (Friedrich Naumann Foundation，弗里德里希·諾曼基金會)">
+                </a>
+                <a href="https://g0v.tw/" target="_blank" class="item">
+                  <img src="/images/partner/g0v.svg" alt="g0v 零時政府">
+                </a>
+                <a href="https://ccw.org.tw/" target="_blank" class="item">
+                  <img src="/images/partner/ccw.png" alt="公督盟 (CCW，公民監督國會聯盟)">
+                </a>
+                <a href="https://ocf.tw/" target="_blank" class="item">
+                  <img src="/images/partner/ocf.svg" alt="OCF (開放文化基金會)">
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -481,7 +888,24 @@
                 </div>
               </div>
             </div>
-            <div>
+            <div class="links">
+              <a href="#">
+                <i class="ci ci-facebook ci-xl"></i>
+              </a>
+              <a href="#">
+                <i class="ci ci-threads-light"></i>
+              </a>
+              <a href="#">
+                <i class="ci ci-youtube ci-xl"></i>
+              </a>
+              <a href="#">
+                <i class="ci ci-github-light ci-xl"></i>
+              </a>
+              <a href="">
+                <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face">
+              </a>
+            </div>
+            <div class="copyright">
               &copy; <span id="current-year"></span> OpenFun. All rights Reserved
             </div>
           </div>
