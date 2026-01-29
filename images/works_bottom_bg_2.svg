@@ -3,41 +3,41 @@
 <svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 2000 400" style="enable-background:new 0 0 2000 400;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill:url(#SVGID_1_);stroke:#F2F2F2;stroke-width:4;stroke-miterlimit:10;}
+	.st0{fill:url(#SVGID_1_);stroke:#ececec;stroke-width:4;stroke-miterlimit:10;}
 	.st1{opacity:0.3;fill:#C9C9C9;enable-background:new    ;}
 	.st2{fill:#FFFFFF;stroke:#CECECE;stroke-width:4;stroke-miterlimit:10;}
 </style>
 <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="1608.65" y1="385.0482" x2="1608.65" y2="629.6538" gradientTransform="matrix(-1 0 0 1 2613.3 -366)">
-	<stop  offset="0.33" style="stop-color:#F2F2F2;stop-opacity:0"/>
-	<stop  offset="1" style="stop-color:#F2F2F2;stop-opacity:0.5"/>
+	<stop  offset="0.33" style="stop-color:#ffffff;stop-opacity:0.5"/>
+	<stop  offset="1" style="stop-color:#ffffff;stop-opacity:1"/>
 </linearGradient>
-<path class="st0" d="M-112,191.9V-4h2233.3v195.9H2000l-245.4,141.9L1386.4,203l-344.3,87.4l-333.9-117l-400,104.7L0,191.9H-112z"/>
+<path class="st0" d="M -112 191.9 V 564 h 2201 v -372 H 1978 l -297 136 L 1386.4 203 l -344.3 87.4 l -333.9 -117 l -400 104.7 L 0 191.9 H -111 z"/>
 <g>
 	<circle class="st1" cx="308.2" cy="278.1" r="22.3"/>
 	<circle class="st2" cx="308.2" cy="278.1" r="6.5"/>
 </g>
 <g>
-	<circle class="st1" cx="0" cy="192.7" r="22.3"/>
-	<circle class="st2" cx="0" cy="192.7" r="6.5"/>
+	<circle class="st1" cx="0" cy="193" r="22.3"/>
+	<circle class="st2" cx="0" cy="193" r="6.5"/>
 </g>
 <g>
-	<circle class="st1" cx="2000" cy="192.7" r="22.3"/>
-	<circle class="st2" cx="2000" cy="192.7" r="6.5"/>
+	<circle class="st1" cx="2000" cy="193" r="22.3"/>
+	<circle class="st2" cx="2000" cy="193" r="6.5"/>
 </g>
 <g>
-	<circle class="st1" cx="1754.6" cy="333.8" r="22.3"/>
-	<circle class="st2" cx="1754.6" cy="333.8" r="6.5"/>
+	<circle class="st1" cx="1682" cy="328" r="22.3"/>
+	<circle class="st2" cx="1682" cy="328" r="6.5"/>
 </g>
 <g>
-	<circle class="st1" cx="1388.5" cy="205.1" r="22.3"/>
-	<circle class="st2" cx="1388.5" cy="205.1" r="6.5"/>
+	<circle class="st1" cx="1388" cy="205" r="22.3"/>
+	<circle class="st2" cx="1388" cy="205" r="6.5"/>
 </g>
 <g>
-	<circle class="st1" cx="1044.1" cy="289.2" r="22.3"/>
-	<circle class="st2" cx="1044.1" cy="289.2" r="6.5"/>
+	<circle class="st1" cx="1044" cy="290" r="22.3"/>
+	<circle class="st2" cx="1044" cy="290" r="6.5"/>
 </g>
 <g>
-	<circle class="st1" cx="708.1" cy="174.9" r="22.3"/>
-	<circle class="st2" cx="708.1" cy="174.9" r="6.5"/>
+	<circle class="st1" cx="708" cy="175" r="22.3"/>
+	<circle class="st2" cx="708" cy="175" r="6.5"/>
 </g>
 </svg>

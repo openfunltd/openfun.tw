@@ -13,9 +13,12 @@
   --gold: #c2a86b;
   --green: #76c114;
   --blue: #2694f0;
+  --purple: #6158ca;
   --primary: var(--blue);
   --link: var(--blue);
+  --site-header-height: 5rem;
   background: #333;
+  scroll-padding-top: 80px;
 }
 
 body {
@@ -38,6 +41,19 @@ h1 {
 h2 {
   font-weight: 600;
   font-size: 2rem;
+
+  small {
+    position: relative;
+    top: -0.4em;
+    margin-left: 0.2em;
+    font-size: 0.4em;
+    font-weight: 200;
+
+    &:before {
+      content: '/ ';
+      margin-right: 0.4em;
+    }
+  }
 }
 
 a {
@@ -228,6 +244,11 @@ section {
     background: var(--blue);
     color: #fff;
   }
+
+  &--purple {
+    background: var(--purple);
+    color: #fff;
+  }
 }
 
 .site-header {
@@ -244,7 +265,7 @@ section {
   }
 
   .header {
-    height: 5rem;
+    height: var(--site-header-height);
     display: grid;
     grid-template-columns: 1fr auto;
     grid-gap: 3rem;
@@ -299,9 +320,15 @@ section {
     .menu {
       display: flex;
 
-      a {
+      & > a,
+      & > .lang-switcher {
         display: block;
-        padding: 0.4rem 0 0.4rem 3rem;
+        padding: 0.4rem 0 0.4rem 1.5rem;
+        font-size: 0.95rem;
+
+        @media (max-width: 1199px) {
+          padding-left: 1rem;
+        }
       }
 
       @media (max-width: 991px) {
@@ -317,7 +344,8 @@ section {
         transition: transform 0.4s;
         color: #222;
 
-        & > a {
+        & > a,
+        & > .lang-switcher {
           padding: 1rem 0;
           display: block;
           border-bottom: 1px solid #0002;
@@ -376,5 +404,21 @@ section {
 
   .info {
     margin: 1.2rem 0;
+  }
+
+  .links {
+    margin: 1.2rem 0;
+
+    a {
+      display: inline-block;
+      margin: 0 0.6rem;
+      font-size: 1rem;
+    }
+
+    img {
+      width: 1.5em;
+      height: 1.5em;
+      object-fit: cover;
+    }
   }
 }
