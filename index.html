@@ -204,6 +204,10 @@
               href="#"
               :class="{active: workListType === 'speech'}"
               @click.prevent="workListType = 'speech'">專題演講</a>
+            <a
+              href="#"
+              :class="{active: workListType === 'media_exposure'}"
+              @click.prevent="workListType = 'media_exposure'">媒體露出</a>
           </div>
 
           <div
@@ -620,6 +624,54 @@
                     link
                   </span>
                   <a href="https://www.youtube.com/watch?v=L3RiGvRrqOk&t=668s" target="_blank">https://www.youtube.com/watch?v=L3RiGvRrqOk&t=668s</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            v-if="workListType === 'media_exposure'"
+            class="list">
+            <div class="item">
+              <div class="image">
+                <img src="//img.youtube.com/vi/0P4si3dzNjI/hqdefault.jpg" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  2025-12-26 「線上平台解密政府預算，跨黨議員實戰經驗分享」記者會
+                </div>
+                <div class="tags">
+                  <span class="tag tag--green">
+                    Budget
+                  </span>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://www.youtube.com/watch?v=0P4si3dzNjI&t=373" target="_blank">https://www.youtube.com/watch?v=0P4si3dzNjI&t=373</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="image">
+                <img src="/images/work/rti_2025-02-26.png" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  2025-02-26 國會資料難找又難用？最新數位工具預計3月推出
+                </div>
+                <div class="tags">
+                  <span class="tag tag--blue">
+                    DATA
+                  </span>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">
+                    link
+                  </span>
+                  <a href="https://www.rti.org.tw/news?uid=3&pid=133410" target="_blank">https://www.rti.org.tw/news?uid=3&pid=133410</a>
                 </div>
               </div>
             </div>
