@@ -14,10 +14,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>歐噴有限公司 OpenFun Ltd.</title>
-  <meta name=description content="OpenFun 致力於釋放開放資料的潛力。從 LawTrace、OpenBudget 到國會 AI 逐字稿，我們將政府資料轉化為可見的社會影響力，每一筆資料都能在數位轉型的浪潮中，化為推動治理改革的關鍵力量。化為推動治理改革的關鍵力量。構築更透明、更具行動力的數位公民社會。">
+  <meta name=description content="OpenFun 致力於釋放開放資料的潛力。我們的核心是<strong>歐噴資料庫</strong>——把散落在各機關的台灣公共資料，整理成 AI 讀得懂的形式，讓任何人都能用問的，就問到答案。這套能力同時支撐著 LawTrace、OpenBudget 與國會 AI 逐字稿，將政府資料轉化為可見的社會影響力，構築更透明、更具行動力的數位公民社會。">
   <meta name="og:type" content="website">
   <meta name="og:title" content="歐噴有限公司 OpenFun Ltd.">
-  <meta name="og:description" content="OpenFun 致力於釋放開放資料的潛力。從 LawTrace、OpenBudget 到國會 AI 逐字稿，我們將政府資料轉化為可見的社會影響力，每一筆資料都能在數位轉型的浪潮中，化為推動治理改革的關鍵力量。化為推動治理改革的關鍵力量。構築更透明、更具行動力的數位公民社會。">
+  <meta name="og:description" content="OpenFun 致力於釋放開放資料的潛力。我們的核心是<strong>歐噴資料庫</strong>——把散落在各機關的台灣公共資料，整理成 AI 讀得懂的形式，讓任何人都能用問的，就問到答案。這套能力同時支撐著 LawTrace、OpenBudget 與國會 AI 逐字稿，將政府資料轉化為可見的社會影響力，構築更透明、更具行動力的數位公民社會。">
   <meta name="og:site_name" content="OpenFun">
   <meta name="og:image" content="https://openfun.tw/images/share.jpg">
 
@@ -38,6 +38,60 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dheereshag/coloured-icons@1.9.6/app/ci.min.css" />
   <script type="module" src="/js/common.js"></script>
   <script src="/js/latest_news.js"></script>
+<style id="dp-style">
+._index .dataplatform{
+  background:#14102e;
+  background-image:radial-gradient(1100px 460px at 50% -8%, rgba(97,88,202,.55), transparent 62%);
+  color:#fff; position:relative;
+}
+._index .dataplatform h2{color:#8f86e8}
+._index .dataplatform h2 small{color:#fff}
+._index .dp-grid{
+  display:grid; grid-template-columns:1.05fr .95fr; gap:4rem;
+  align-items:start; margin-top:2.5rem;
+}
+._index .dp-lead h3{
+  font-size:2.9rem; line-height:1.15; font-weight:700;
+  margin:0 0 1.2rem; color:#fff; letter-spacing:.01em;
+}
+._index .dp-desc{
+  font-size:1.05rem; line-height:1.95; color:rgba(255,255,255,.82); margin:0 0 2.2rem;
+}
+._index .dp-stats{
+  display:flex; gap:2.6rem; margin-bottom:2.2rem;
+  padding:1.3rem 0; border-top:1px solid rgba(255,255,255,.16);
+  border-bottom:1px solid rgba(255,255,255,.16);
+}
+._index .dp-stat b{
+  display:block; font-family:"Pragati Narrow",sans-serif;
+  font-size:2.5rem; line-height:1; color:#fff; font-weight:400;
+}
+._index .dp-stat span{font-size:.85rem; color:rgba(255,255,255,.62); letter-spacing:.06em}
+._index .dp-step{
+  display:flex; gap:1.3rem; padding:1.5rem 0;
+  border-bottom:1px solid rgba(255,255,255,.12);
+}
+._index .dp-step:first-child{padding-top:0}
+._index .dp-step:last-child{border-bottom:0}
+._index .dp-num{
+  font-family:"Pragati Narrow",sans-serif; font-size:1.7rem; line-height:1;
+  color:#8f86e8; flex:0 0 2.4rem; padding-top:.15rem;
+}
+._index .dp-body h4{
+  margin:0 0 .5rem; font-size:1.15rem; color:#fff; font-weight:600;
+}
+._index .dp-body p{
+  margin:0; font-size:.95rem; line-height:1.8; color:rgba(255,255,255,.72);
+}
+@media (max-width:991px){
+  ._index .dp-grid{grid-template-columns:1fr; gap:2.8rem}
+  ._index .dp-lead h3{font-size:2.3rem}
+}
+@media (max-width:575px){
+  ._index .dp-stats{gap:1.5rem; flex-wrap:wrap}
+  ._index .dp-stat b{font-size:2rem}
+}
+</style>
 </head>
 <body class="_openfun _index">
   <div :style="`--bg-pos: ${bgPos}px;`">
@@ -118,6 +172,7 @@
             :class="{ active: rwdMenuVisible }"
           >
             <a href="#about" @click="rwdMenuVisible = false">關於歐噴</a>
+            <a href="#dataplatform" @click="rwdMenuVisible = false">歐噴資料庫</a>
             <a href="#works" @click="rwdMenuVisible = false">作品集</a>
             <a href="#news" @click="rwdMenuVisible = false">最新消息</a>
             <a href="#keymoments" @click="rwdMenuVisible = false">重要時刻</a>
@@ -144,7 +199,7 @@
                 </small>
               </h1>
               <div class="desc">
-                OpenFun 致力於釋放開放資料的潛力。從 LawTrace、OpenBudget 到國會 AI 逐字稿，我們將政府資料轉化為可見的社會影響力，每一筆資料都能在數位轉型的浪潮中，化為推動治理改革的關鍵力量。化為推動治理改革的關鍵力量。構築更透明、更具行動力的數位公民社會。
+                OpenFun 致力於釋放開放資料的潛力。我們的核心是<strong>歐噴資料庫</strong>——把散落在各機關的台灣公共資料，整理成 AI 讀得懂的形式，讓任何人都能用問的，就問到答案。這套能力同時支撐著 LawTrace、OpenBudget 與國會 AI 逐字稿，將政府資料轉化為可見的社會影響力，構築更透明、更具行動力的數位公民社會。
               </div>
               <div class="action">
                 <a href="#works" class="btn btn--white btn--outline">
@@ -172,8 +227,63 @@
               <p><strong>「取之於開放，用之於開放：讓技術轉化為社會進步的有趣動力。」</strong></p>
               <p>歐噴（OpenFun）的名字源自於對「開放」的拆解 —— 「開」與「放」，即是 Open 與 Fun。我們深信實踐開放文化（Open Culture）的過程不僅充滿挑戰，更具備改變社會的樂趣。我們召集志同道合的夥伴，將心中的創意與技術實作轉化為程式碼，不僅持續探索最新科技，更致力於將技術落實為應用，與世界共享成果。</p>
               <p>創辦人 Ronny 作為 g0v 零時政府的長期參與者，並發起了「台灣公司資料」、「公司關係圖」、「開放政府標案」、「開放政治獻金」、「求職小幫手」、「新聞小幫手」、「鄉民看電視」、「國會觀察家」...等專案。這些經驗不只是黑客松的實驗，更是已穩定運作超過十年、持續服務大眾的成熟專案。在累積了深厚的資料爬蟲、地理資料處理、搜尋引擎、語音轉逐字稿及大型語言模型（LLM）等技術後，歐噴有限公司成立了。</p>
-              <p>現在，這份深耕十年的技術底蘊，轉化為解決公共問題的實體產品。歐噴開發了 OpenBudget 政府預算查詢，將繁雜難懂的預算書轉化為視覺化、可比較的結構化資料；透過 LawTrace 立法足跡，將分散在各機關的法案資訊一鍵彙整，大幅降低公眾參與立法的門檻；並推出 立法院國會頻道 AI 即時轉換逐字稿，讓國會討論能以最快的速度轉化為可搜尋的文字紀錄。</p>
+              <p>現在，這份深耕十年的技術底蘊，轉化為解決公共問題的實體產品。歐噴開發了 OpenBudget 政府預算查詢，將繁雜難懂的預算書轉化為視覺化、可比較的結構化資料；透過 LawTrace 立法足跡，將分散在各機關的法案資訊一鍵彙整，大幅降低公眾參與立法的門檻；並推出 立法院國會頻道 AI 即時轉換逐字稿，讓國會討論能以最快的速度轉化為可搜尋的文字紀錄。2026 年，歐噴將這些年累積的資料處理能力整合為<b>歐噴資料庫</b>，把台灣的公共資料整理成 AI 讀得懂的形式，並為每一份資料附上說明書，讓任何人都能用問的方式取得答案。</p>
               <p>歐噴專注於「開放政府」與「資料應用」兩大核心，致力於為客戶與公民社會提供長久穩定、具備實質影響力的數位工具，讓複雜的治理變得簡單、透明且易於參與。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="dataplatform" id="dataplatform">
+        <div class="container">
+          <h2>
+            OUR FOCUS
+            <small>
+              歐噴資料庫
+            </small>
+          </h2>
+
+          <div class="dp-grid">
+            <div class="dp-lead">
+              <h3>讓 AI 讀懂台灣</h3>
+              <p class="dp-desc">
+                台灣的公共資料不缺，缺的是能直接拿來用的形式。歐噴資料庫把三千多份政府資料整理成
+                AI 讀得懂的樣子——你不需要知道資料在哪、叫什麼名字，問就好。
+              </p>
+              <div class="dp-stats">
+                <div class="dp-stat"><b>3,400+</b><span>資料集</span></div>
+                <div class="dp-stat"><b>99%</b><span>附 AI 說明書</span></div>
+                <div class="dp-stat"><b>5</b><span>分類領域</span></div>
+              </div>
+              <div class="action">
+                <a href="https://data.openfun.tw" target="_blank" class="btn">開始使用</a>
+                <a href="https://data.openfun.tw/llms.txt" target="_blank" class="btn btn--white btn--outline">給 AI 的說明書</a>
+              </div>
+            </div>
+
+            <div class="dp-steps">
+              <div class="dp-step">
+                <div class="dp-num">01</div>
+                <div class="dp-body">
+                  <h4>清理與彙集</h4>
+                  <p>散在幾十個機關網站、格式不一的資料，整理成一致、可查詢的結構。</p>
+                </div>
+              </div>
+              <div class="dp-step">
+                <div class="dp-num">02</div>
+                <div class="dp-body">
+                  <h4>附說明書</h4>
+                  <p>每一份資料都載明欄位定義與使用限制，不會被誤用。</p>
+                </div>
+              </div>
+              <div class="dp-step">
+                <div class="dp-num">03</div>
+                <div class="dp-body">
+                  <h4>AI 也有說明書</h4>
+                  <p>另外寫一份給 AI 看的指引，讓它知道怎麼查，也知道什麼時候該說「查不到」。</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -214,6 +324,33 @@
           <div
             v-if="workListType === 'product'"
             class="list">
+            <div class="item">
+              <div class="image">
+                <img src="/images/work/data-openfun.png" loading="lazy">
+              </div>
+              <div class="content">
+                <div class="title">
+                  歐噴資料庫
+                </div>
+                <div class="tags">
+                  <span class="tag tag--green">
+                    Data
+                  </span>
+                  <span class="tag tag--yellow">
+                    AI
+                  </span>
+                </div>
+                <div class="desc">
+                  <p>政府依法公開了大量資料，但它們散在幾十個機關網站，格式不一，有的還要一頁一頁點。想使用的人往往得先花大把時間整理，才能真正開始分析——這正是歐噴做了十幾年政府資料爬蟲最熟悉的一件事。</p>
+                  <p>歐噴資料庫把這件事做到底：我們將台灣的公共資料整理成 AI 能直接讀取的形式，並為每一份資料附上說明書，載明欄位定義與使用限制，讓 AI 不只查得到，也知道什麼時候不該亂用。</p>
+                  <p>對使用者而言，差別在於你不需要知道資料存在哪、叫什麼名字。直接問你的 AI，它會自己去查，並告訴你答案出自哪一份資料。</p>
+                </div>
+                <div class="url">
+                  <span class="material-symbols-rounded">link</span>
+                  <a href="https://data.openfun.tw" target="_blank">https://data.openfun.tw</a>
+                </div>
+              </div>
+            </div>
             <div class="item">
               <div class="image">
                 <img src="/images/work7.png" loading="lazy">
